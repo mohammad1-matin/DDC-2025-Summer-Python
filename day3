@@ -31,11 +31,14 @@ Every choice you make can lead you closer to the treasure... or total disaster �
 print("🏝️ Welcome to the Lost Treasure Adventure!")
 print("You're waking up on the shore of Code Island with nothing but a backpack and a torn map.\n")
 
+import time 
+
 # 🧭 First choice
 print("You see two paths in the jungle ahead:")
 print("A - A dark path covered in vines")
 print("B - A sunny trail with animal footprints")
-path = input("Which path do you choose? (A/B): ").upper()
+print("C - A fierce tornado with gulsting winds")
+path = input("Which path do you choose? (A/B/C): ").upper()
 
 if path == "A":
     print("\n🌿 You push through the vines and find a deep cave entrance.")
@@ -56,6 +59,21 @@ elif path == "B":
     else:
         print("You walk past and fall into a muddy pit. Stuck forever. Game over 💀")
 
+elif path == "C":
+    print("\nAs you walk, the tornado starts getting closer and closer to you.")
+    start_time = time.time()
+    tornado_choice = input("Do you RUN away from the tornado or IGNORE it?").lower()
+    end_time = time.time()
+    elapsed_time = round(end_time - start_time, 2)
+    if tornado_choice == "run":
+        print("💨 You try to escape, but the winds keep blowing harder and harder! But at one point it was so strong it carried you over to a wooden shelter. 🏠")
+        print("You quickly go under ground and seek shelter. Moments later... HUZZAH! The tornado passed by! 🎉")
+        print(f"You made your decision and escaped in **{elapsed_time} seconds**.")
+        print("\nAs you gather yourself, you notice something glinting in the dim light of the shelter. You reach down and pick up a **mysterious, ornate key**! 🔑")
+        print("It feels heavy and cold in your hand. You wonder what it unlocks...")
+    else:
+        print("You get trapped in the tornado and eventually get multiple damages to health and die. Game over 💀")
+    
 else:
     print("You sit on the beach doing nothing. Eventually a crab steals your backpack. 🦀 Game over.")
 
